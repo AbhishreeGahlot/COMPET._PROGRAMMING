@@ -1,0 +1,55 @@
+Understanding time complexity is essential for evaluating the efficiency of algorithms, especially in competitive programming where performance is critical. Here's a summary of key points from the text you provided:
+
+### Time Complexity Basics
+- **Time Complexity**: Represents the efficiency of an algorithm as a function of input size, denoted as \(O(\cdots)\).
+- **Order of Magnitude**: Indicates the growth rate of the algorithm's running time with respect to the input size \(n\).
+
+### Calculation Rules
+- **Loops**:
+  - Single loop: \(O(n)\)
+  - Nested loops: \(O(n^2)\) for two loops, \(O(n^k)\) for \(k\) loops.
+- **Order of Magnitude Examples**:
+  - \(O(n)\): `for (int i = 1; i <= n; i++) { }`
+  - \(O(n^2)\): `for (int i = 1; i <= n; i++) { for (int j = 1; j <= n; j++) { } }`
+
+### Phases and Complexity
+- **Consecutive Phases**: The total complexity is determined by the phase with the largest time complexity.
+  - Example: If phases have complexities \(O(n)\), \(O(n^2)\), and \(O(n)\), the total is \(O(n^2)\).
+
+### Multiple Variables
+- When time complexity depends on several factors:
+  - Example: \(O(nm)\): `for (int i = 1; i <= n; i++) { for (int j = 1; j <= m; j++) { } }`
+
+### Recursion
+- **Time complexity**: Depends on the number of recursive calls and the complexity of each call.
+  - Example 1: `void f(int n) { if (n == 1) return; f(n-1); }` is \(O(n)\).
+  - Example 2: `void g(int n) { if (n == 1) return; g(n-1); g(n-1); }` is \(O(2^n)\).
+
+### Complexity Classes
+- **Common Classes**:
+  - \(O(1)\): Constant time
+  - \(O(\log n)\): Logarithmic time
+  - \(O(\sqrt{n})\): Square root time
+  - \(O(n)\): Linear time
+  - \(O(n \log n)\): Linearithmic time
+  - \(O(n^2)\): Quadratic time
+  - \(O(n^3)\): Cubic time
+  - \(O(2^n)\): Exponential time
+  - \(O(n!)\): Factorial time
+
+### Estimating Efficiency
+- **Rule of Thumb**: Modern computers perform hundreds of millions of operations per second.
+  - Example: For \(n = 10^5\) and \(O(n^2)\), \(10^{10}\) operations take tens of seconds.
+
+### Example: Maximum Subarray Sum
+1. **Algorithm 1 (O(n^3))**:
+   - Three nested loops to find the sum of all subarrays.
+2. **Algorithm 2 (O(n^2))**:
+   - Two nested loops, updating the sum dynamically.
+3. **Algorithm 3 (O(n))**:
+   - Kadane’s algorithm, using a single loop to find the maximum sum efficiently.
+
+### Efficiency Comparison
+- **Algorithm 3** is the most efficient, able to handle large inputs quickly, while Algorithms 1 and 2 become impractical for large \(n\).
+
+This understanding helps in designing efficient algorithms by providing insights into their expected performance, enabling better decision-making before implementation.
